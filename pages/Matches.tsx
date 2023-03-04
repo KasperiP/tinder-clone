@@ -62,10 +62,10 @@ const MatchesScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title} variant="bold">
-        Osumat
+        Matches
       </Text>
       <Text style={styles.subtitle}>
-        Tämä on lista ihmisistä jotka ovat tykänneet sinusta takaisin.
+        This is a list of people who have liked you and your matches.
       </Text>
       <View style={styles.timeline}>
         <View style={styles.divider} />

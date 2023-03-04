@@ -58,7 +58,7 @@ const SwipeScreen = () => {
         </View>
         <View style={styles.textContainer}>
           <Text style={styles.title} variant="bold">
-            Selaa
+            Discover
           </Text>
           <Text style={styles.subtitle}>Tampere</Text>
         </View>
