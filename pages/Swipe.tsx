@@ -205,7 +205,6 @@ const styles = StyleSheet.create({
   },
   buttons: {
     marginTop: 10,
-    zIndex: -100,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -215,7 +214,6 @@ const styles = StyleSheet.create({
     height: 28,
     justifyContent: 'center',
     display: 'flex',
-    zIndex: -100,
   },
   heartIcon: {
     backgroundColor: '#e94057',
