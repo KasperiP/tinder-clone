@@ -1,57 +1,25 @@
-import React, { useMemo, useState } from 'react';
-
 import { Image } from 'expo-image';
+import { createRef, useMemo, useState } from 'react';
 import { Dimensions, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import TinderCard from 'react-tinder-card';
 import Text from '../components/Text/Text';
-
-const profiles = [
-  {
-    id: 1,
-    name: 'Saana',
-    age: 20,
-  },
-  {
-    id: 2,
-    name: 'Saana',
-    age: 20,
-  },
-  {
-    id: 3,
-    name: 'Saana',
-    age: 20,
-  },
-  {
-    id: 4,
-    name: 'Saana',
-    age: 20,
-  },
-  {
-    id: 5,
-    name: 'Saana',
-    age: 20,
-  },
-];
+import { PROFILE_MOCKS } from '../contants/contants';
 
 const SwipeScreen = () => {
-  const [profile, setProfile] = useState<typeof profiles>(profiles);
-  const [lastDirection, setLastDirection] = useState<
-    'right' | 'left' | 'up' | 'down'
-  >();
+  const [profile, setProfile] = useState(PROFILE_MOCKS);
   const [removed, setRemoved] = useState<number[]>([]);
 
   const refs = useMemo(
     () =>
       Array(profile.length)
         .fill(0)
-        .map((_) => React.createRef()),
+        .map((_) => createRef<number>()),
     [profile],
   );
 
-  const swiped = (dir: 'right' | 'left' | 'up' | 'down', id: number) => {
-    setLastDirection(dir);
+  const swiped = (id: number) => {
     setRemoved([...removed, id]);
   };
 
@@ -76,8 +44,7 @@ const SwipeScreen = () => {
   };
 
   const reset = () => {
-    console.log('reset');
-    setProfile(profiles);
+    setProfile(PROFILE_MOCKS);
     setRemoved([]);
   };
 
@@ -113,9 +80,9 @@ const SwipeScreen = () => {
       >
         {profile.map((profile, index) => (
           <TinderCard
-            ref={refs[index]}
+            ref={refs[index] as any}
             key={profile.id}
-            onSwipe={(dir) => swiped(dir, profile.id)}
+            onSwipe={() => swiped(profile.id)}
             onCardLeftScreen={() => outOfFrame(profile.id)}
           >
             <View

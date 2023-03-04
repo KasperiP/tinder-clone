@@ -4,35 +4,7 @@ import { FlatList, ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Text } from '../components/Text/Text';
-import { BLUR_HASH } from '../contants/contants';
-
-const profiles = [
-  {
-    id: 1,
-    name: 'Saana',
-    age: 20,
-  },
-  {
-    id: 2,
-    name: 'Saana',
-    age: 20,
-  },
-  {
-    id: 3,
-    name: 'Saana',
-    age: 20,
-  },
-  {
-    id: 4,
-    name: 'Saana',
-    age: 20,
-  },
-  {
-    id: 5,
-    name: 'Saana',
-    age: 20,
-  },
-];
+import { BLUR_HASH, PROFILE_MOCKS } from '../contants/contants';
 
 interface CardProps {
   profile: {
@@ -103,7 +75,7 @@ const MatchesScreen = () => {
       <ScrollView contentContainerStyle={styles.cardGrid}>
         <FlatList
           numColumns={2}
-          data={profiles}
+          data={PROFILE_MOCKS}
           renderItem={({ item, index }) => (
             <Card profile={item} index={index} />
           )}
