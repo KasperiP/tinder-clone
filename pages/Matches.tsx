@@ -1,6 +1,6 @@
 import { Image } from 'expo-image';
 import React from 'react';
-import { FlatList, ScrollView, StyleSheet, View } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Text } from '../components/Text/Text';
@@ -72,7 +72,7 @@ const MatchesScreen = () => {
         <Text style={styles.timelineText}>Viimeisimmät</Text>
         <View style={styles.divider} />
       </View>
-      <ScrollView contentContainerStyle={styles.cardGrid}>
+      <View style={styles.cardGrid}>
         <FlatList
           numColumns={2}
           data={PROFILE_MOCKS}
@@ -81,7 +81,7 @@ const MatchesScreen = () => {
           )}
           keyExtractor={(item) => item.id.toString()}
         />
-      </ScrollView>
+      </View>
     </SafeAreaView>
   );
 };
@@ -89,7 +89,9 @@ const MatchesScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    padding: 30,
+    paddingTop: 10,
+    paddingBottom: 0,
   },
   title: {
     fontSize: 34,
@@ -116,14 +118,10 @@ const styles = StyleSheet.create({
     height: 1,
     backgroundColor: '#dbd9dd',
   },
-  cardGrid: {
-    marginTop: 20,
-    gap: 20,
-  },
   card: {
     width: '50%',
     height: 250,
-    marginBottom: 20,
+    marginBottom: 16,
   },
   cardTextContainer: {
     position: 'absolute',
@@ -135,6 +133,11 @@ const styles = StyleSheet.create({
   cardText: {
     fontSize: 16,
     color: '#fff',
+  },
+  cardGrid: {
+    flex: 1,
+    height: '100%',
+    marginTop: 10,
   },
   cardTextActionsContainer: {
     display: 'flex',
