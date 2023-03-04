@@ -6,25 +6,30 @@ export const PROFILE_MOCKS = [
     id: 1,
     name: 'Saana',
     age: 20,
+    description: 'Influencer',
   },
   {
     id: 2,
     name: 'Saana',
     age: 20,
+    description: 'Influencer',
   },
   {
     id: 3,
     name: 'Saana',
     age: 20,
+    description: 'Influencer',
   },
   {
     id: 4,
     name: 'Saana',
     age: 20,
+    description: 'Influencer',
   },
   {
     id: 5,
     name: 'Saana',
     age: 20,
+    description: 'Influencer',
   },
 ];

@@ -99,6 +99,12 @@ const SwipeScreen = () => {
                 contentFit="cover"
                 transition={1000}
               />
+              <View style={styles.cardTextContainer}>
+                <Text style={styles.cardText} variant="bold">
+                  {profile.name}, {profile.age}
+                </Text>
+                <Text style={styles.cardTextDesc}>{profile.description}</Text>
+              </View>
             </View>
           </TinderCard>
         ))}
@@ -174,6 +180,23 @@ const styles = StyleSheet.create({
   cardContainer: {
     width: '100%',
     height: '90%',
+  },
+  cardTextContainer: {
+    position: 'absolute',
+    bottom: 0,
+    padding: 10,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    width: '100%',
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+  },
+  cardText: {
+    color: '#fff',
+    fontSize: 26,
+  },
+  cardTextDesc: {
+    color: '#fff',
+    fontSize: 16,
   },
   card: {
     position: 'absolute',
