@@ -69,7 +69,7 @@ const MatchesScreen = () => {
       </Text>
       <View style={styles.timeline}>
         <View style={styles.divider} />
-        <Text style={styles.timelineText}>Viimeisimmät</Text>
+        <Text style={styles.timelineText}>Latest</Text>
         <View style={styles.divider} />
       </View>
       <View style={styles.cardGrid}>
